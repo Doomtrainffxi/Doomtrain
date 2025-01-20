@@ -49,7 +49,7 @@ xi.settings.map =
     -- Max open listings per player, 0 = no limit. (Default 7)
     -- Note = Settings over 7 may need client-side plugin to work under all circumstances.
     -- If this is the case, consider using the ah_pagination module
-    AH_LIST_LIMIT = 7,
+    AH_LIST_LIMIT = 36,
 
     -- The total enmity cap for a given entity on the enmity table.
     -- 30,000 is believed to be approximately current retail cap.
@@ -59,7 +59,7 @@ xi.settings.map =
 
     -- Misc EXP related settings
     EXP_RATE                = 1.0,
-    EXP_LOSS_RATE           = 1.0,
+    EXP_LOSS_RATE           = 0.0,
     EXP_PARTY_GAP_PENALTIES = true,
 
     -- A party member's experience points are nullified if the level difference with the highest-level party member exceeds this value.
@@ -77,7 +77,7 @@ xi.settings.map =
     VANADIEL_TIME_EPOCH = 0,
 
     -- For old fame calculation use .25
-    FAME_MULTIPLIER = 1.00,
+    FAME_MULTIPLIER = 0.25,
 
     -- Percentage of experience normally lost to keep upon death. 0 means full loss, where 1 means no loss.
     EXP_RETAIN = 0,
@@ -90,7 +90,7 @@ xi.settings.map =
     MINIMUM_LEVEL_CONQUEST_INFUENCE_LOSS = 6,
 
     -- Enable/disable Level Sync
-    LEVEL_SYNC_ENABLE = true,
+    LEVEL_SYNC_ENABLE = false,
 
     -- Disables ability to equip higher level gear when level cap/sync effect is on player.
     DISABLE_GEAR_SCALING = false,
@@ -103,7 +103,7 @@ xi.settings.map =
     WS_POINTS_SKILLCHAIN = 1,
 
     -- Enable/disable jobs other than BST and RNG having widescan
-    ALL_JOBS_WIDESCAN = true,
+    ALL_JOBS_WIDESCAN = false,
 
     -- Base player movement speed
     BASE_SPEED = 50,
@@ -137,19 +137,19 @@ xi.settings.map =
     GARDEN_MH_AURA_MATTERS   = false,
 
     -- Use current retail skill up rates and margins (Retail = High Skill-Up rate; Skill-Up when at or under 10 levels above synth recipe level.)
-    CRAFT_MODERN_SYSTEM = true,
+    CRAFT_MODERN_SYSTEM = false,
 
     -- Craft level limit from witch specialization points beginning to count. (Retail = 700; Level 75 era:600)
     CRAFT_COMMON_CAP = 700,
 
     -- Amount of points allowed in crafts over the level defined above. Points are shared across all crafting skills. (Retail = 400; All skills can go to max = 3200)
-    CRAFT_SPECIALIZATION_POINTS = 400,
+    CRAFT_SPECIALIZATION_POINTS = 3200,
 
     -- Multiplier applied to high quality chance
     CRAFT_HQ_CHANCE_MULTIPLIER = 1.0,
 
     -- Enable/disable all fishing, including quests. ENABLE AT YOUR OWN RISK.
-    FISHING_ENABLE = false,
+    FISHING_ENABLE = true,
 
     -- Sets the minimum level a character must be to fish.
     FISHING_MIN_LEVEL = 1,
@@ -224,19 +224,19 @@ xi.settings.map =
     MOB_NO_DESPAWN = false,
 
     -- Adds extra time to mob despawn in seconds. Base time is 25s, so a setting of 5 here would be a total of 30 seconds.
-    MOB_ADDITIONAL_TIME_TO_DEAGGRO = 0,
+    MOB_ADDITIONAL_TIME_TO_DEAGGRO = 275,
 
     -- Allows parry, block, and guard to skill up regardless of the action occuring.
     -- This did not happen in previous eras
-    PARRY_OLD_SKILLUP_STYLE = false,
-    BLOCK_OLD_SKILLUP_STYLE = false,
-    GUARD_OLD_SKILLUP_STYLE = false,
+    PARRY_OLD_SKILLUP_STYLE = true,
+    BLOCK_OLD_SKILLUP_STYLE = true,
+    GUARD_OLD_SKILLUP_STYLE = true,
 
     -- Globally adjusts ALL battlefield level caps by this many levels.
     BATTLE_CAP_TWEAK = 0,
 
     -- Enable/disable level cap of mission battlefields stored in database.
-    LV_CAP_MISSION_BCNM = false,
+    LV_CAP_MISSION_BCNM = true,
 
     -- Allow players to enter BCNMs which are flagged as experimental
     BCNM_ENABLE_EXPERIMENTAL = true,
@@ -257,7 +257,7 @@ xi.settings.map =
 
     -- Command Audit [logging] commands with lower permission than this will not be logged.
     -- Zero for no logging at all. Commands given to non GMs are not logged.
-    AUDIT_GM_CMD = false,
+    AUDIT_GM_CMD = 5,
 
     -- Todo = other logging including anti-cheat messages
 
@@ -286,11 +286,11 @@ xi.settings.map =
     -- Despawn jug pets that have a minimum level below level sync or zone level restriction.
     -- Such as despawning Courier Carrie in a level 20 cap when their minimum level to summon is 23.
     -- While the default value of false is retail accurate, there are some balance concerns such as using 1000 needles at low levels from the cactuar pet.
-    DESPAWN_JUGPETS_BELOW_MINIMUM_LEVEL = false,
+    DESPAWN_JUGPETS_BELOW_MINIMUM_LEVEL = true,
 
     -- Send stack traces to the client after caught Lua errors if
     -- their GM level is the same or higher than this number.
     -- The max GM level is 5, so setting this to 6 disables it
     -- for everone. Setting it to 0 enables for everyone.
-    REPORT_LUA_ERRORS_TO_PLAYER_LEVEL = 6,
+    REPORT_LUA_ERRORS_TO_PLAYER_LEVEL = 1,
 }
