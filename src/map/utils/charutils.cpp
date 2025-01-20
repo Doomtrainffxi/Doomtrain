@@ -128,6 +128,18 @@ namespace charutils
 
     void CalculateStats(CCharEntity* PChar)
     {
+		//Doomtrain Custom Base Stats System
+		PChar->health.maxhp = (int16)(settings::get<float>("map.PLAYER_HP_MULTIPLIER") * ((PChar->getCharVar("baseStatHP"))));
+		PChar->health.maxmp = (int16)(settings::get<float>("map.PLAYER_MP_MULTIPLIER") * ((PChar->getCharVar("baseStatMP"))));
+		PChar->stats.STR = (int16)(settings::get<float>("map.PLAYER_STAT_MULTIPLIER") * ((PChar->getCharVar("baseStatSTR"))));
+		PChar->stats.DEX = (int16)(settings::get<float>("map.PLAYER_STAT_MULTIPLIER") * ((PChar->getCharVar("baseStatDEX"))));
+		PChar->stats.VIT = (int16)(settings::get<float>("map.PLAYER_STAT_MULTIPLIER") * ((PChar->getCharVar("baseStatVIT"))));
+		PChar->stats.AGI = (int16)(settings::get<float>("map.PLAYER_STAT_MULTIPLIER") * ((PChar->getCharVar("baseStatAGI"))));
+		PChar->stats.INT = (int16)(settings::get<float>("map.PLAYER_STAT_MULTIPLIER") * ((PChar->getCharVar("baseStatINT"))));
+		PChar->stats.MND = (int16)(settings::get<float>("map.PLAYER_STAT_MULTIPLIER") * ((PChar->getCharVar("baseStatMND"))));
+		PChar->stats.CHR = (int16)(settings::get<float>("map.PLAYER_STAT_MULTIPLIER") * ((PChar->getCharVar("baseStatCHR"))));
+		/*
+		
         float raceStat  = 0; // The final HP number for a race-based level.
         float jobStat   = 0; // Estimate HP level for the level based on the primary profession.
         float sJobStat  = 0; // HP final number for a level based on a secondary profession.
@@ -331,6 +343,9 @@ namespace charutils
             ref<uint16>(&PChar->stats, counter) = (uint16)(settings::get<float>("map.PLAYER_STAT_MULTIPLIER") * (raceStat + jobStat + sJobStat) + MeritBonus);
             counter += 2;
         }
+		
+		*/ //Doomtrain Custom Base Stats System
+		
     }
 
     /************************************************************************
